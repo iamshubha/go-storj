@@ -14,14 +14,13 @@ type ClientImpl struct {
 	StorjClient *uplink.Project
 }
 
-func StorjClient() *ClientImpl {
-	accessToken := os.Getenv("accessToken")
-	access, err := uplink.ParseAccess(accessToken)
+func StorjClient(ctx context.Context) *ClientImpl {
+	access, err := uplink.ParseAccess(os.Getenv("ACCESS_TOKEN"))
 
 	if err != nil {
 		panic(err)
 	}
-	storjClient, err := uplink.OpenProject(context.Background(), access)
+	storjClient, err := uplink.OpenProject(ctx, access)
 	if err != nil {
 		panic(err)
 	}

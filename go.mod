@@ -4,10 +4,11 @@ go 1.20
 
 require (
 	github.com/gin-gonic/gin v1.9.1
+	github.com/joho/godotenv v1.5.1
 	storj.io/uplink v1.10.0
 )
 
-require github.com/go-playground/validator/v10 v10.14.0 // indirect
+require github.com/go-playground/validator/v10 v10.14.0
 
 require (
 	github.com/bytedance/sonic v1.9.1 // indirect
